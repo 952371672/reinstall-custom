@@ -1,0 +1,260 @@
+﻿Diagnose log at 2026-08-05T02:29:54Z
+
+AppPath: C:\Program Files\Bull Hermes\resources\resources\git\mingw64\bin\git-credential-manager.exe
+InstallDir: C:\Program Files\Bull Hermes\resources\resources\git\mingw64\bin\
+Version: 2.7.3+5fa7116896c82164996a609accd1c5ad90fe730a
+
+------------
+Diagnostic: Environment
+Skipped: False
+Success: True
+Exception: None
+Log:
+OSType: Windows
+OSVersion: 10.0 (build 26200)
+Reading environment variables... OK
+ Variables:
+EFC_10788_3789132940=1
+CONFIG_SITE=C:/Program Files/Bull Hermes/resources/resources/git/etc/config.site
+EFC_10788_4126798990=1
+OS=Windows_NT
+HERMES_REDACT_SECRETS=true
+SYSTEMROOT=C:\WINDOWS
+HERMES_GIT_BASH_PATH=C:\Program Files\Bull Hermes\resources\resources\git\bin\bash.exe
+EFC_10788_2283032206=1
+BROWSER_INACTIVITY_TIMEOUT=120
+SHLVL=1
+PS1=\[\033]0;$TITLEPREFIX:$PWD\007\]\n\[\033[32m\]\u@\h \[\033[35m\]$MSYSTEM \[\033[33m\]\w\[\033[36m\]`__git_ps1`\[\033[0m\]\n$ 
+TERMINAL_CONTAINER_DISK=51200
+INFOPATH=C:\Program Files\Bull Hermes\resources\resources\git\mingw64\local\info;C:\Program Files\Bull Hermes\resources\resources\git\mingw64\share\info;C:\Program Files\Bull Hermes\resources\resources\git\usr\local\info;C:\Program Files\Bull Hermes\resources\resources\git\usr\share\info;C:\Program Files\Bull Hermes\resources\resources\git\usr\info;C:\Program Files\Bull Hermes\resources\resources\git\share\info
+OPENCLAW_HOME=E:\openclaw\.openclaw
+COMMONPROGRAMW6432=C:\Program Files\Common Files
+TERMINAL_DOCKER_IMAGE=nikolaik/python-nodejs:python3.11-nodejs20
+PATH=C:\Users\牛佳\bin;C:\Program Files\Bull Hermes\resources\resources\git\mingw64\bin;C:\Program Files\Bull Hermes\resources\resources\git\usr\local\bin;C:\Program Files\Bull Hermes\resources\resources\git\usr\bin;C:\Program Files\Bull Hermes\resources\resources\git\usr\bin;C:\Program Files\Bull Hermes\resources\resources\git\mingw64\bin;C:\Program Files\Bull Hermes\resources\resources\git\usr\bin;C:\Users\牛佳\bin;C:\Users\牛佳\.hermes\bin;C:\Program Files\Bull Hermes\resources\resources\venv\Scripts;C:\Program Files\Bull Hermes\resources\resources\runtime;C:\Program Files\Bull Hermes\resources\resources\tools;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\WINDOWS\System32\OpenSSH;C:\Users\牛佳\AppData\Local\Microsoft\WindowsApps;C:\Program Files (x86)\NetSarang\Xshell 8;C:\Users\牛佳\AppData\Local\Python\pythoncore-3.14-64\Scripts;C:\Users\牛佳\AppData\Local\nvm;C:\nvm4w\nodejs;C:\Program Files\nodejs;C:\Users\牛佳\AppData\Local\Programs\Python\Launcher;E:\Fiddler;C:\Users\牛佳\AppData\Local\Python\bin;C:\Users\牛佳\AppData\Local\nvm;C:\nvm4w\nodejs;C:\Users\牛佳\AppData\Roaming\npm;E:\openclaw\bin;C:\Users\牛佳\.hermes\bin;C:\Program Files\nodejs;E:\openclaw;C:\Program Files\Bull Hermes\resources\resources\venv\Scripts;C:\Program Files\Bull Hermes\resources\resources\git\usr\bin\vendor_perl;C:\Program Files\Bull Hermes\resources\resources\git\usr\bin\core_perl
+HERMES_QUIET=1
+GROK45_API_KEY=sk-6G8f4oSsJXJIrsvNyIDeH73kl2cOjxRtRlM1ARZwQIuJmMqq
+HERMES_SESSION_ID=mry5zu2x4uia0m
+HOSTNAME=DESKTOP-EGR2039
+HERMES_AGENT_BRIDGE_WORKER_PROFILE=default
+DISPLAY=needs-to-be-defined
+USERDOMAIN=DESKTOP-EGR2039
+TERMINAL_DOCKER_ENV={}
+SYSTEMDRIVE=C:
+HERMES_AGENT_BRIDGE_PYTHON=C:\Program Files\Bull Hermes\resources\resources\venv\Scripts\python.exe
+MINGW_CHOST=x86_64-w64-mingw32
+PROCESSOR_REVISION=5000
+MANPATH=C:\Program Files\Bull Hermes\resources\resources\git\mingw64\local\man;C:\Program Files\Bull Hermes\resources\resources\git\mingw64\share\man;C:\Program Files\Bull Hermes\resources\resources\git\usr\local\man;C:\Program Files\Bull Hermes\resources\resources\git\usr\share\man;C:\Program Files\Bull Hermes\resources\resources\git\usr\man;C:\Program Files\Bull Hermes\resources\resources\git\share\man
+NVM_HOME=C:\Users\牛佳\AppData\Local\nvm
+NUMBER_OF_PROCESSORS=16
+PYTHONIOENCODING=utf-8
+EFC_10788_1262719628=1
+FEISHU_APP_ID=cli_aa8d544e24f59bb7
+PROGRAMW6432=C:\Program Files
+PKG_CONFIG_SYSTEM_LIBRARY_PATH=C:/Program Files/Bull Hermes/resources/resources/git/mingw64/lib
+TERMINAL_MODAL_IMAGE=nikolaik/python-nodejs:python3.11-nodejs20
+PROCESSOR_LEVEL=25
+COMMONPROGRAMFILES(X86)=C:\Program Files (x86)\Common Files
+PORT=8648
+PKG_CONFIG_PATH=C:\Program Files\Bull Hermes\resources\resources\git\mingw64\lib\pkgconfig;C:\Program Files\Bull Hermes\resources\resources\git\mingw64\share\pkgconfig
+SESSIONNAME=Console
+LANG=zh_CN.UTF-8
+SSLKEYLOGFILE=E:\openclaw\.openclaw\.openclaw\workspace\tls_keys.log
+PSMODULEPATH=C:\Program Files\WindowsPowerShell\Modules;C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules
+TERMINAL_DOCKER_MOUNT_CWD_TO_WORKSPACE=False
+HERMES_AGENT_BRIDGE_BROKER_PID=20044
+TERMINAL_CWD=C:\Program Files\Bull Hermes\resources\resources\webui
+PYTHONUTF8=1
+HERMES_AGENT_ROOT=C:\Program Files\Bull Hermes\resources\resources\venv\Lib\site-packages
+HERMES_BIN=C:\Program Files\Bull Hermes\resources\resources\venv\Scripts\hermes.exe
+ZXVE_CLIENT_AGENT_UUID=FE9A65A6-F52A-4A42-9DBA-E30DBB93306F
+HERMES_OPENROUTER_APP_CATEGORIES=cli-agent,personal-agent
+USERPROFILE=C:\Users\牛佳
+MINGW_PACKAGE_PREFIX=mingw-w64-x86_64
+COMPUTERNAME=DESKTOP-EGR2039
+WINDIR=C:\WINDOWS
+SHELL=C:\Program Files\Bull Hermes\resources\resources\git\usr\bin\bash.exe
+LOGONSERVER=\\DESKTOP-EGR2039
+HOMEDRIVE=C:
+ORIGINAL_PATH=C:\Program Files\Bull Hermes\resources\resources\git\mingw64\bin;C:\Program Files\Bull Hermes\resources\resources\git\usr\bin;C:\Users\牛佳\bin;C:\Users\牛佳\.hermes\bin;C:\Program Files\Bull Hermes\resources\resources\venv\Scripts;C:\Program Files\Bull Hermes\resources\resources\runtime;C:\Program Files\Bull Hermes\resources\resources\tools;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\WINDOWS\System32\OpenSSH;C:\Users\牛佳\AppData\Local\Microsoft\WindowsApps;C:\Program Files (x86)\NetSarang\Xshell 8;C:\Users\牛佳\AppData\Local\Python\pythoncore-3.14-64\Scripts;C:\Users\牛佳\AppData\Local\nvm;C:\nvm4w\nodejs;C:\Program Files\nodejs;C:\Users\牛佳\AppData\Local\Programs\Python\Launcher;E:\Fiddler;C:\Users\牛佳\AppData\Local\Python\bin;C:\Users\牛佳\AppData\Local\nvm;C:\nvm4w\nodejs;C:\Users\牛佳\AppData\Roaming\npm;E:\openclaw\bin;C:\Users\牛佳\.hermes\bin;C:\Program Files\nodejs;E:\openclaw;C:\Program Files\Bull Hermes\resources\resources\venv\Scripts
+PROGRAMFILES(X86)=C:\Program Files (x86)
+ACLOCAL_PATH=C:\Program Files\Bull Hermes\resources\resources\git\mingw64\share\aclocal;C:\Program Files\Bull Hermes\resources\resources\git\usr\share\aclocal
+HERMES_AGENT_BRIDGE_STARTUP_TIMEOUT_MS=180000
+PUBLIC=C:\Users\Public
+COMMONPROGRAMFILES=C:\Program Files\Common Files
+HERMES_INSTALL_ROOT=C:\Program Files\Bull Hermes\resources\resources
+HERMES_HOME=C:\Users\牛佳\.hermes
+EFC_10788_2775293581=1
+TERMINAL_DAYTONA_IMAGE=nikolaik/python-nodejs:python3.11-nodejs20
+HERMES_AGENT_BRIDGE_ENDPOINT=tcp://127.0.0.1:19503
+BIND_HOST=127.0.0.1
+PROCESSOR_IDENTIFIER=AMD64 Family 25 Model 80 Stepping 0, AuthenticAMD
+ORIGINAL_TEMP=C:/Users/牛佳/AppData/Local/Temp
+APPDATA=C:\Users\牛佳\AppData\Roaming
+HOMEPATH=\Users\牛佳
+TERMINAL_PERSISTENT_SHELL=True
+TMP=C:\Users\牛佳\AppData\Local\Temp
+FEISHU_APP_SECRET=0tsot3UkDIfwZTUX6seMgcy8zpM6o2cL
+EXEPATH=C:\Program Files\Bull Hermes\resources\resources\git\bin
+PATHEXT=.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC
+DRIVERDATA=C:\Windows\System32\Drivers\DriverData
+LOCALAPPDATA=C:\Users\牛佳\AppData\Local
+TERMINAL_DOCKER_RUN_AS_HOST_USER=False
+TERMINAL_DOCKER_FORWARD_ENV=[]
+HERMES_OPENROUTER_APP_REFERER=https://hermes-studio.ai
+TERMINAL_DOCKER_VOLUMES=[]
+PLINK_PROTOCOL=ssh
+TERMINAL_CONTAINER_CPU=1
+PROGRAMDATA=C:\ProgramData
+TERMINAL_CONTAINER_MEMORY=5120
+COMSPEC=C:\WINDOWS\system32\cmd.exe
+SSH_ASKPASS=C:/Program Files/Bull Hermes/resources/resources/git/mingw64/bin/git-askpass.exe
+TERMINAL_SINGULARITY_IMAGE=docker://nikolaik/python-nodejs:python3.11-nodejs20
+USERNAME=niujia
+PWD=C:/Users/牛佳/Desktop/reinstall-custom
+OLDPWD=C:/Users/牛佳/Desktop/reinstall-custom
+123PAN=C:\Users\牛佳\AppData\Local\123pan\123pan.exe
+API_KEY=sk-QbuDCLPXDgJ8dcQcRHkbXvbwL4nwL4mpxrJqYdakPKCRb4XO
+MSYSTEM_CHOST=x86_64-w64-mingw32
+MSYSTEM_CARCH=x86_64
+USERDOMAIN_ROAMINGPROFILE=DESKTOP-EGR2039
+TERMINAL_MODAL_MODE=auto
+VIRTUAL_ENV=C:\Program Files\Bull Hermes\resources\resources\venv
+TMPDIR=C:\Users\牛佳\AppData\Local\Temp
+TERMINAL_CONTAINER_PERSISTENT=True
+TERMINAL_ENV=local
+AUTH_TOKEN=e29d6448aaca87b80a558aa7adf999f3d5ef7d5462b79b6440318e080c2f45cc
+TEMP=C:\Users\牛佳\AppData\Local\Temp
+HERMES_EXEC_ASK=1
+ALLUSERSPROFILE=C:\ProgramData
+EFC_10788_1592913036=1
+PKG_CONFIG_SYSTEM_INCLUDE_PATH=C:/Program Files/Bull Hermes/resources/resources/git/mingw64/include
+GIT_TRACE2_PARENT_SID=4e54757e-2767-4eab-b426-f26115f75415
+MSYSTEM_PREFIX=C:/Program Files/Bull Hermes/resources/resources/git/mingw64
+HERMES_OPENROUTER_APP_TITLE=Hermes Studio
+PROCESSOR_ARCHITECTURE=AMD64
+MSYSTEM=MINGW64
+HERMES_AGENT_BRIDGE_BASE_HOME=C:\Users\牛佳\.hermes
+TERMINAL_TIMEOUT=180
+ONEDRIVE=C:\Users\牛佳\OneDrive
+PROGRAMFILES=C:\Program Files
+TERM=xterm-256color
+TERMINAL_LIFETIME_SECONDS=300
+NODE_ENV=production
+ORIGINAL_TMP=C:/Users/牛佳/AppData/Local/Temp
+MINGW_PREFIX=C:/Program Files/Bull Hermes/resources/resources/git/mingw64
+_=C:/Program Files/Bull Hermes/resources/resources/git/mingw64/bin/git-credential-manager
+HOME=C:\Users\牛佳
+NVM_SYMLINK=C:\nvm4w\nodejs
+
+
+------------
+Diagnostic: File system
+Skipped: False
+Success: True
+Exception: None
+Log:
+Temporary directory is 'C:\Users\牛佳\AppData\Local\Temp\'...
+Checking basic file I/O...
+Writing to temporary file 'C:\Users\牛佳\AppData\Local\Temp\7ef740dca7741ff7ab9665b7'... OK
+Reading from temporary file 'C:\Users\牛佳\AppData\Local\Temp\7ef740dca7741ff7ab9665b7'... OK
+Deleting temporary file 'C:\Users\牛佳\AppData\Local\Temp\7ef740dca7741ff7ab9665b7'... OK
+Testing IFileSystem instance...
+UserHomePath: C:\Users\牛佳
+UserDataDirectoryPath: C:\Users\牛佳\.gcm
+GetCurrentDirectory(): C:\Users\牛佳\Desktop\reinstall-custom
+
+------------
+Diagnostic: Networking
+Skipped: False
+Success: True
+Exception: None
+Log:
+Checking networking and HTTP stack...
+Creating HTTP client... OK
+IsNetworkAvailable: True
+Sending HEAD request to http://example.com...Sending HEAD request to https://example.com... OK
+ OK
+Acquiring free TCP port... OK
+Testing local HTTP loopback connections...
+Creating new HTTP listener for http://localhost:60491/... OK
+Waiting for loopback connection... OK
+Writing response... OK
+Waiting for response data... OK
+Loopback connection data OK
+
+------------
+Diagnostic: Git
+Skipped: False
+Success: True
+Exception: None
+Log:
+Getting Git version... OK
+Git version is '2.54.0.windows.1'
+Locating current repository...Git repository at 'C:/Users/鐗涗匠/Desktop/reinstall-custom/.git'
+ OK
+Listing all Git configuration... OK
+Git configuration:
+file:C:/Program Files/Bull Hermes/resources/resources/git/etc/gitconfig	core.symlinks=false
+file:C:/Program Files/Bull Hermes/resources/resources/git/etc/gitconfig	core.autocrlf=true
+file:C:/Program Files/Bull Hermes/resources/resources/git/etc/gitconfig	core.fscache=true
+file:C:/Program Files/Bull Hermes/resources/resources/git/etc/gitconfig	color.interactive=true
+file:C:/Program Files/Bull Hermes/resources/resources/git/etc/gitconfig	color.ui=auto
+file:C:/Program Files/Bull Hermes/resources/resources/git/etc/gitconfig	help.format=html
+file:C:/Program Files/Bull Hermes/resources/resources/git/etc/gitconfig	diff.astextplain.textconv=astextplain
+file:C:/Program Files/Bull Hermes/resources/resources/git/etc/gitconfig	rebase.autosquash=true
+file:C:/Program Files/Bull Hermes/resources/resources/git/etc/gitconfig	filter.lfs.clean=git-lfs clean -- %f
+file:C:/Program Files/Bull Hermes/resources/resources/git/etc/gitconfig	filter.lfs.smudge=git-lfs smudge -- %f
+file:C:/Program Files/Bull Hermes/resources/resources/git/etc/gitconfig	filter.lfs.process=git-lfs filter-process
+file:C:/Program Files/Bull Hermes/resources/resources/git/etc/gitconfig	filter.lfs.required=true
+file:C:/Program Files/Bull Hermes/resources/resources/git/etc/gitconfig	credential.helper=helper-selector
+file:"C:/Users/\347\211\233\344\275\263/.gitconfig"	credential.helper=manager
+file:"C:/Users/\347\211\233\344\275\263/.gitconfig"	credential.helperselector.selected=manager
+file:.git/config	core.repositoryformatversion=0
+file:.git/config	core.filemode=false
+file:.git/config	core.bare=false
+file:.git/config	core.logallrefupdates=true
+file:.git/config	core.symlinks=false
+file:.git/config	core.ignorecase=true
+file:.git/config	remote.origin.url=https://github.com/952371672/reinstall-custom.git
+file:.git/config	remote.origin.fetch=+refs/heads/main:refs/remotes/origin/main
+file:.git/config	branch.main.remote=origin
+file:.git/config	branch.main.merge=refs/heads/main
+file:.git/config	user.name=952371672
+file:.git/config	user.email=952371672@users.noreply.github.com
+
+
+------------
+Diagnostic: Credential storage
+Skipped: False
+Success: True
+Exception: None
+Log:
+ICredentialStore instance is of type: CredentialStore
+Writing test credential... OK
+Reading test credential... OK
+Deleting test credential... OK
+
+------------
+Diagnostic: Microsoft authentication (AAD/MSA)
+Skipped: False
+Success: True
+Exception: None
+Log:
+Broker is not enabled.
+Flow type is: Auto
+Gathering MSAL token cache data... OK
+CacheDirectory: C:\Users\牛佳\AppData\Local\.IdentityService
+CacheFileName: msal.cache
+CacheFilePath: C:\Users\牛佳\AppData\Local\.IdentityService\msal.cache
+Creating cache helper... OK
+Verifying MSAL token cache persistence... OK
+
+------------
+Diagnostic: GitHub API
+Skipped: False
+Success: True
+Exception: None
+Log:
+Using 'https://github.com/' as API target.
+Querying '/meta' endpoint... OK
+

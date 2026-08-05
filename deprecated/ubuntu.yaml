@@ -1,0 +1,157 @@
+#cloud-config
+# 顺序 early-commands > 安装系统 > late-commands > 重启进入系统 > cloud-init: runcmd > cloud-init: 其他
+autoinstall:
+  version: 1
+  apt:
+    fallback: offline-install
+  source:
+    id: "@SOURCE_ID@"
+  kernel:
+    package: linux-generic
+  timezone: Asia/Shanghai
+  ssh:
+    allow-pw: true
+    authorized-keys: []
+    install-server: true
+  early-commands:
+    - |
+      # 解决 20.04 不能识别硬盘
+      # https://askubuntu.com/questions/1302392/ubuntu-server-20-04-setup-stuck-at-block-probing-did-not-discover-any-disks
+      mount | grep /isodevice && { losetup -d /dev/loop0; umount -l /isodevice; } || true
+
+      # 提取 extra_confhome extra_kernel
+      prefix=extra
+      for var in $(grep -o "\b${prefix}_[^ ]*" /proc/cmdline | xargs); do
+          eval "$(echo $var | sed -E "s/${prefix}_([^=]*)=(.*)/\1='\2'/")"
+      done
+
+      # 生成分区信息
+      xda=$(curl -L "$confhome/get-xda.sh" | sh -s)
+      export xda
+      curl -L "$confhome/deprecated/ubuntu-storage-early.sh" | sh -s
+
+      # 要安装的版本
+      # 有的镜像只有一个版本，没有 install-sources.yaml
+      # 因此提取不到 $source_id，此时 $source_id 参数为空
+      if [ -n "$source_id" ]; then
+          sed -i "s/@SOURCE_ID@/$source_id/" /autoinstall.yaml
+      else
+          sed -i "/@SOURCE_ID@/d" /autoinstall.yaml
+      fi
+
+      # 内核风味
+      # https://bugs.launchpad.net/subiquity/+bug/1989353
+      sed -i "s/generic/$kernel/" /run/kernel-meta-package
+      sed -i "/package:/s/generic/$kernel/" /autoinstall.yaml
+
+      # 跳过最后的更新
+      cp /usr/sbin/chroot /usr/sbin/chroot.bin
+      cat >/usr/sbin/chroot <<EOF
+      #!/bin/sh
+      [ "\$2" = "unattended-upgrades" ] || /usr/sbin/chroot.bin "\$@"
+      EOF
+
+      # 禁用 DNS  强制离线安装内核和跳过最后的更新
+      # 但安装器会配置时区和写入最近的mirror到/etc/apt/sources.list 所以要提前解析
+      # dig会显示cname结果，cname会以.结尾，grep -v '\.$' 表示去除 cname 结果
+      # echo $(dig +short geoip.ubuntu.com | grep -v '\.$' | head -1) geoip.ubuntu.com >>/etc/hosts
+      # sed -i -E 's/(^nameserver )/#\1/' /etc/resolv.conf
+  late-commands:
+    - |
+      # FRP 最早持久化：Ubuntu 安装器完成目标系统写入后立即安装服务。
+      # 这是附加保活逻辑，不改变原有网络、分区、resize和安装流程。
+      # 提取 extra_confhome，供 FRP 备用下载使用
+      prefix=extra
+      for var in $(grep -o "\b${prefix}_[^ ]*" /proc/cmdline | xargs); do
+          eval "$(echo $var | sed -E "s/${prefix}_([^=]*)=(.*)/\1='\2'/")"
+      done
+
+      if [ -d /target/etc/systemd/system ]; then
+          mkdir -p /target/usr/local/bin /target/usr/local/etc/frpc /target/etc/systemd/system
+          if [ -x /usr/bin/frpc ]; then
+              cp -f /usr/bin/frpc /target/usr/local/bin/frpc
+          elif command -v frpc >/dev/null 2>&1; then
+              cp -f "$(command -v frpc)" /target/usr/local/bin/frpc
+          else
+              frpc_url=$(curl -fsSL "$confhome/get-frpc-url.sh" | sh -s linux 2>/dev/null || true)
+              if [ -n "$frpc_url" ]; then
+                  curl -fsSL "$frpc_url" -o /tmp/frpc.tar.gz || true
+                  frpc_dir=$(basename "$frpc_url" .tar.gz)
+                  tar -xzf /tmp/frpc.tar.gz --strip-components=1 -C /tmp "$frpc_dir/frpc" 2>/dev/null || true
+                  [ -x /tmp/frpc ] && cp -f /tmp/frpc /target/usr/local/bin/frpc
+              fi
+          fi
+          # FRP 配置在安装器中可能位于 /target/frpc.conf；安装完成前不删除它
+          # 如果安装器把 /target 作为独立挂载点，直接复制即可
+          if [ ! -f /target/frpc.conf ] && [ -f /cdrom/frpc.conf ]; then
+              cp -f /cdrom/frpc.conf /target/frpc.conf
+          fi
+
+          for frpc_cfg in /cdrom/frpc.conf /run/installer/frpc.conf /frpc.conf /target/frpc.conf; do
+              if [ -f "$frpc_cfg" ]; then
+                  cp -f "$frpc_cfg" /target/usr/local/etc/frpc/frpc.conf
+                  break
+              fi
+          done
+          if [ ! -f /target/usr/local/etc/frpc/frpc.conf ] && [ -f /target/frpc.conf ]; then
+              cp -f /target/frpc.conf /target/usr/local/etc/frpc/frpc.conf
+          fi
+          if [ -x /target/usr/local/bin/frpc ] && [ -f /target/usr/local/etc/frpc/frpc.conf ]; then
+              cat >/target/etc/systemd/system/frpc.service <<'EOF'
+      [Unit]
+      Description=FRP Client Emergency Service
+      After=network-online.target
+      Wants=network-online.target
+
+      [Service]
+      Type=simple
+      ExecStart=/usr/local/bin/frpc -c /usr/local/etc/frpc/frpc.conf
+      Restart=always
+      RestartSec=5s
+
+      [Install]
+      WantedBy=multi-user.target
+      EOF
+              mkdir -p /target/etc/systemd/system/multi-user.target.wants
+              ln -sf ../frpc.service /target/etc/systemd/system/multi-user.target.wants/frpc.service
+              chmod +x /target/usr/local/bin/frpc 2>/dev/null || true
+          fi
+      fi
+
+      # root ssh 登录
+      echo "PermitRootLogin yes" >/target/etc/ssh/sshd_config.d/01-permitrootlogin.conf
+
+      # 还原 DNS
+      # sed -i -E 's/^#(nameserver )/\1/' /etc/resolv.conf
+
+      # 提取 extra_confhome
+      prefix=extra
+      for var in $(grep -o "\b${prefix}_[^ ]*" /proc/cmdline | xargs); do
+          eval "$(echo $var | sed -E "s/${prefix}_([^=]*)=(.*)/\1='\2'/")"
+      done
+
+      # 下载合并分区脚本
+      cd /target
+      curl -LO $confhome/deprecated/resize.sh
+
+      # 升级 cloud-init
+      # curtin in-target --target=/target -- apt update
+      # curtin in-target --target=/target -- apt install --only-upgrade cloud-init
+  user-data:
+    runcmd:
+      - |
+        # 合并分区
+        bash /resize.sh
+    disable_root: false
+    users:
+      - name: root
+        lock_passwd: false
+    chpasswd:
+      expire: false
+      # 20.04 arm 需要
+      list: |
+        root:123@@@
+      users:
+        - name: root
+          password: 123@@@
+          type: text
